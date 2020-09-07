@@ -1,10 +1,11 @@
 package com.thoughtworks.capability.gtb.entrancequiz.api;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.thoughtworks.capability.gtb.entrancequiz.data.RawData;
+import com.thoughtworks.capability.gtb.entrancequiz.domain.Student;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class StudentController {
@@ -14,4 +15,5 @@ public class StudentController {
     public ResponseEntity getStudentList() {
         return ResponseEntity.ok(RawData.getStudentList());
     }
+
 }
