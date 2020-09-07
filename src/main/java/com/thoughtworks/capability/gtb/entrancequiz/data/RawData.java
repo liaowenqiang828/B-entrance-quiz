@@ -12,4 +12,8 @@ public class RawData {
     public static ArrayList<String> getStudentList() {
         return studentList;
     }
+
+    public static void addStudentToList(String studentName) {
+        studentList.add(studentName);
+    }
 }

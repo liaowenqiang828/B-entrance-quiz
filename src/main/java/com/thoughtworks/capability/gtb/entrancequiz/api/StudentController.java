@@ -16,4 +16,12 @@ public class StudentController {
         return ResponseEntity.ok(RawData.getStudentList());
     }
 
+    @CrossOrigin
+    @PostMapping("/student")
+    public ResponseEntity addStudentToList(@RequestBody String student) throws JsonProcessingException {
+        ObjectMapper objectMapper = new ObjectMapper();
+        Student stu = objectMapper.readValue(student, Student.class);
+        RawData.addStudentToList(stu.getName());
+        return ResponseEntity.ok().build();
+    }
 }
